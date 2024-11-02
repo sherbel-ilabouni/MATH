@@ -211,18 +211,20 @@ h2 {
     gap: 10px;
     font-size: 32px;
     margin: 20px 0;
+    
 }
 
 .exercise-content {
     display: flex;
     align-items: center;
+     
     justify-content: center;
     gap: 10px;
-    direction: ltr;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    direction: ltr;
 }
 
 .exercise input {
@@ -230,13 +232,11 @@ h2 {
     height: 45px;
     font-size: 24px;
     text-align: center;
-    margin: 0 8px;
     border: 2px solid #2196F3;
     border-radius: 6px;
     padding: 5px;
     background-color: #E3F2FD;
-    order: -1;
-    transition: all 0.3s ease;
+    order: 5;
 }
 
 .exercise input:focus {
@@ -249,13 +249,13 @@ h2 {
 .equals {
     font-size: 32px;
     margin: 0 10px;
-    order: 2;
+    order: 3;
     color: #333;
 }
 
 .expression {
     font-size: 32px;
-    order: 3;
+    order: 2;
     color: #333;
 }
 
@@ -264,7 +264,6 @@ h2 {
     font-weight: bold;
     color: #FF5722;
 }
-
 /* כפתורי משחק */
 .game-buttons {
     display: flex;
@@ -542,9 +541,11 @@ h2 {
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-.comparison-content{
+
+.comparison-content {
     font-size: 3.2rem !important;
 }
+
 .comparison-buttons {
     display: flex;
     justify-content: center;
@@ -577,6 +578,7 @@ h2 {
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
 }
+
 .comparison-exercise {
     display: flex;
     align-items: center;

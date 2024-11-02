@@ -90,8 +90,6 @@ const comparisonLevelRanges = {
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-// פונקציות למשחק המתמטיקה
 function generateMathQuestion() {
     const range = mathLevelRanges[mathCurrentOperation][mathCurrentLevel];
     
@@ -117,7 +115,6 @@ function generateMathQuestion() {
     `;
     document.getElementById('answer').focus();
 }
-
 function checkMathAnswer() {
     const userAnswer = parseInt(document.getElementById('answer').value);
     
