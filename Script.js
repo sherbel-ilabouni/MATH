@@ -250,7 +250,7 @@ function generateComparisonQuestion() {
     comparisonNum2 = getRandomNumber(range.min, range.max);
     
     comparisonCorrectSymbol = comparisonNum1 < comparisonNum2 ? '<' :
-                             comparisonNum1 > comparisonNum2 ? '>' : '=';
+    comparisonNum1 > comparisonNum2 ? '>' : '=';
 
     document.querySelector('.comparison').innerHTML = `
         <div class="comparison-content">
