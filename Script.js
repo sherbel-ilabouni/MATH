@@ -166,17 +166,28 @@ function handleMathAnswer(isCorrect, userAnswer, correctAnswer) {
 function generateSequence() {
     const range = sequenceLevelRanges[sequenceCurrentType][sequenceCurrentLevel];
     currentSequence = [];
-    let current = range.start;
-
+    
     if (sequenceCurrentType === 'descending') {
+        // מגריל מספר התחלתי בטווח מתאים לרמה
+        const startNum = getRandomNumber(range.start / 2, range.start * 1.5);
+        let current = startNum;
+        
+        // יצירת סדרה יורדת עם הפרש רנדומלי
+        const diff = getRandomNumber(range.diff, range.diff * 2);
         for (let i = 0; i < 5; i++) {
             currentSequence.push(current);
-            current -= range.diff;
+            current -= diff;
         }
-    } else {
+    } else { // geometric
+        // מגריל מספר התחלתי בטווח מתאים לרמה
+        const startNum = getRandomNumber(range.start / 2, range.start);
+        let current = startNum;
+        
+        // יצירת סדרה גאומטרית עם יחס רנדומלי
+        const ratio = range.ratio;
         for (let i = 0; i < 5; i++) {
-            currentSequence.push(current);
-            current = Math.floor(current / range.ratio);
+            currentSequence.push(Math.round(current)); // עיגול למספר שלם
+            current = current / ratio;
         }
     }
 
@@ -193,7 +204,6 @@ function generateSequence() {
     document.querySelector('.sequence').innerHTML = sequenceHTML;
     document.getElementById('sequence-answer')?.focus();
 }
-
 function checkSequenceAnswer() {
     const userAnswer = parseInt(document.getElementById('sequence-answer').value);
     
